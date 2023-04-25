@@ -24,12 +24,12 @@ int j = 0;       // Параметр выхода из цикла 2
 int res = 0;     // Переменная результата (третья цифра введенного числа) 
 
 Console.WriteLine("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
-if ( (num / 10)  == 0 || ((num / 100)  == 0) ) Console.WriteLine("Третьей цифры в введёном числе нет");
+int num1 = Convert.ToInt32(Console.ReadLine());
+if ( (num1 / 10)  == 0 || ((num1 / 100)  == 0) ) Console.WriteLine("Третьей цифры в введёном числе нет");
 else {
     // Поиск разрядности введённого числа
     while (exit == 0) {
-        if (num / del == 0) exit = 1;
+        if (num1 / del == 0) exit = 1;
         else {
             del = del * 10;
             i++;
@@ -39,8 +39,8 @@ else {
     i--;
     // Заполняем массив
     while (i >= 0) {
-        res = (num / Convert.ToInt32(Math. Pow(10, j + 1))) * Convert.ToInt32(Math. Pow(10, j + 1));  // 1122  --> 1120
-        res = (num - res) / Convert.ToInt32(Math. Pow(10, j));  // (1122 - 1120)  --> 2
+        res = (num1 / Convert.ToInt32(Math. Pow(10, j + 1))) * Convert.ToInt32(Math. Pow(10, j + 1));  // 1122  --> 1120
+        res = (num1 - res) / Convert.ToInt32(Math. Pow(10, j));  // (1122 - 1120)  --> 2
         array[i] = res;
         j++;
         i--; 
@@ -58,13 +58,13 @@ bool Weekend (int day){
     if ( (day != 6) && (day != 7) ) return false;
     else return true;
 }
-int exit = 0;
+int exit1 = 0;
 int yourDay = 0;
 // Проверяем, что пользователь не ввёл что-то не то.
-while (exit == 0){
+while (exit1 == 0){
 Console.WriteLine("Введите интересующий день недели в виде цифры, 1 - пн, 2 - вт, ..., 7 - вс.");
 yourDay = Convert.ToInt32(Console.ReadLine());
-if (yourDay <= 7) exit = 1;
+if (yourDay <= 7) exit1 = 1;
 }
 // Вызываем метод проверки введённый день на выходной.
 Console.WriteLine($"Введёный день является выходным? Ответ: {Weekend(yourDay)}");
